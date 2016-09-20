@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Album(model.Models):
+class Album(models.Model):
 	name = models.CharField(max_length=50)
 	artist = models.ForeignKey('Artist')
 	genre = models.ForeignKey('Genre')
@@ -9,20 +9,21 @@ class Album(model.Models):
 	def __str__(self):
 		return "{}, {}, {}".format(self.name, self.artist, self.genre)
 
-class Track(model.Models):
-	name = models.CharField(max_length=50)
+class Track(models.Model):
+	title = models.CharField(max_length=50)
 	album = models.ForeignKey('Album')
 
 	def __str__(self):
-		return self.name
+		return self.title
 
-class Artist(model.Models):
+class Artist(models.Model):
 	name = models.CharField(max_length=50)
 
 	def __str__(self):
 		return self.name
 
-class Genre(model.Models):
+class Genre(models.Model):
+	GOOD = 'good'
 	CATEGORY_CHOICES = (
 		('ALTERNATIVE', 'alternative'),
 		('DISCO', 'disco'),
@@ -33,7 +34,7 @@ class Genre(model.Models):
 		('GOOD', 'good'),
 	)
 
-	name = models.CharField(max_length=50, default=ALTERNATIVE, choices=CATEGORY_CHOICES)
+	name = models.CharField(max_length=50, default=GOOD, choices=CATEGORY_CHOICES)
 
 	def __str__(self):
 		return self.name

@@ -18,5 +18,5 @@ from ftunes import views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^ftunes/', include(ftunes.views)),
+#    url(r'^ftunes/', include(ftunes.views)),
 ]

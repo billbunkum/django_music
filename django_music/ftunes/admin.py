@@ -6,5 +6,8 @@ from .models import Album, Track, Genre, Artist
 class AlbumAdmin(admin.ModelAdmin):
 	search_fields = ('name',)
 
+
 admin.site.register(Album, AlbumAdmin)
 admin.site.register(Track, AlbumAdmin)
+admin.site.register(Genre, AlbumAdmin)
+admin.site.register(Artist, AlbumAdmin)

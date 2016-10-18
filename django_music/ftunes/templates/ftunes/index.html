@@ -5,13 +5,31 @@
 <div class="row">
     <div class="col-md-3"></div>
     <div class="col-md-6">
-        {% if albums %}
-            {% for album in albums %}
 
-                {album}
+        {% if albums %}
+        <h2>Albums</h2>
+            <div class="panel">
+                {% for album in albums %}
+
+                <ul>
+                    <li>{{album}}</li>
+                    <li>{{album.artist}}</li>
+                    <li>{{album.genre}}</li>
+                </ul>
+
+                {% endfor %}
+        {% endif %}
+
+        {% if tracks %}
+            {% for track in tracks %}
+                <ul>
+                    <li>{{track}}</li>
+                </ul>
 
             {% endfor %}
         {% endif %}
+            </div>
+
 
     </div>
     <div class="col-md-3"></div>

@@ -7,7 +7,7 @@ class Album(models.Model):
 	genre = models.ForeignKey('Genre')
 
 	def __str__(self):
-		return "{}, {}, {}".format(self.name, self.artist, self.genre)
+		return "{}".format(self.name)
 
 class Track(models.Model):
 	title = models.CharField(max_length=50)
